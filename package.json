@@ -1,8 +1,13 @@
 {
   "private": true,
   "name": "ratptimer",
-  "scripts": {},
+  "scripts": {
+    "test": "eslint src"
+  },
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.11.0"
   }
 }
