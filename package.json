@@ -5,6 +5,7 @@
     "start": "yarn dev:start",
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
+    "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "eslint src"
   },
@@ -30,9 +31,11 @@
     "babel-eslint": "^8.0.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.1",
     "eslint": "^4.11.0",
     "nodemon": "^1.12.1",
     "prettier-eslint-cli": "^4.4.0",
+    "rimraf": "^2.6.2",
     "webpack-dev-server": "^2.9.4"
   }
 }
