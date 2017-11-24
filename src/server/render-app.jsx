@@ -1,11 +1,19 @@
 
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
+import Helmet from 'react-helmet'
+import { StaticRouter } from 'react-router'
 
 import App from './../shared/app'
-
 import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT, isProd } from '../shared/config'
 
-const renderApp = () => {
+const renderApp = (location) => {
+
+  const appHtml = ReactDOMServer.renderToString(
+    <StaticRouter location={location}>
+      <App />
+    </StaticRouter>)
+
   return (
     `<!doctype html>
     <html>

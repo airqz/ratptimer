@@ -1,9 +1,12 @@
 
+import 'babel-polyfill'
+
 /*import Immutable from 'immutable'*/
 import $ from 'jquery'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import { BrowserRouter } from 'react-router-dom'
 import Tether from 'tether'
 
 import App from '../shared/app'
@@ -15,9 +18,11 @@ require('bootstrap')
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
 
 const wrapApp = (AppComponent) =>
-  <AppContainer>
-    <AppComponent />
-  </AppContainer>
+  <BrowserRouter>
+    <AppContainer>
+      <AppComponent />
+    </AppContainer>
+  </BrowserRouter>
 
 ReactDOM.render(wrapApp(App), rootEl)
 
