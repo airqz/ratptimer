@@ -2,17 +2,19 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import Helmet from 'react-helmet'
+import { SheetsRegistry, SheetsRegistryProvider } from 'react-jss'
 import { StaticRouter } from 'react-router'
 
 import App from './../shared/app'
 import { APP_CONTAINER_CLASS, JSS_SSR_CLASS, STATIC_PATH, WDS_PORT, isProd } from '../shared/config'
 
-const renderApp = (location) => {
-
+const renderApp = (location, routerContext = {}) => {
+  const sheets = new SheetsRegistry()
   const appHtml = ReactDOMServer.renderToString(
-    <StaticRouter location={location}>
+    <StaticRouter location={location} context={routerContext}>
       <App />
     </StaticRouter>)
+  const head = Helmet.rewind()
 
   return (
     `<!doctype html>

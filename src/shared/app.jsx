@@ -1,7 +1,15 @@
+console.log("toto");
+
+import React from 'react'
+import { Switch } from 'react-router'
+import { Route } from 'react-router-dom'
+import Helmet from 'react-helmet'
 
 import HelloPage from './component/page/hello'
 import HomePage from './component/page/home'
+import Nav from './component/nav'
 import Footer from './component/footer'
+import { APP_NAME } from './config'
 
 import {
   HOME_PAGE_ROUTE,
@@ -11,6 +19,10 @@ import {
 const App = () =>
   <div>
     <Nav />
+    <Switch>
+      <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
+      <Route path={HELLO_PAGE_ROUTE} render={() => <HelloPage />} />
+    </Switch>
     <Footer />
   </div>
 

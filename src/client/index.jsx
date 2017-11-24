@@ -10,6 +10,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Tether from 'tether'
 
 import App from '../shared/app'
+import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR, isProd } from '../shared/config'
 
 window.jQuery = $
 window.Tether = Tether

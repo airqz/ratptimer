@@ -2,7 +2,7 @@ import React from 'react'
 import { APP_NAME } from '../config'
 
 const Footer = () =>
-  <div className="container mt-5">
+  <div className="">
     <hr />
     <footer>
       <p>© {APP_NAME} 2017</p>

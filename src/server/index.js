@@ -10,6 +10,7 @@ import { WEB_PORT, STATIC_PATH, isProd } from '../shared/config'
 
 const app = express()
 const http = Server(app)
+//console.log(app)
 
 app.use(compression())
 app.use(favicon('public/img/favicon.ico'))

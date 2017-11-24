@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import React from 'react'
-/*import { Link, NavLink } from 'react-router-dom'*/
+import { Link, NavLink } from 'react-router-dom'
 import { APP_NAME } from '../config'
 import {
   HOME_PAGE_ROUTE,
@@ -22,9 +22,7 @@ const Nav = () =>
       <ul className="navbar-nav mr-auto">
         {[
           { route: HOME_PAGE_ROUTE, label: 'Home' },
-          { route: HELLO_PAGE_ROUTE, label: 'Say Hello' },
-          { route: HELLO_ASYNC_PAGE_ROUTE, label: 'Say Hello Asynchronously' },
-          { route: NOT_FOUND_DEMO_PAGE_ROUTE, label: '404 Demo' },
+          { route: HELLO_PAGE_ROUTE, label: 'Say Hello' }
         ].map(link => (
           <li className="nav-item" key={link.route}>
             <NavLink to={link.route} className="nav-link" activeStyle={{ color: 'white' }} exact onClick={handleNavLinkClick}>{link.label}</NavLink>
