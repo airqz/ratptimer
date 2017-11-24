@@ -16,7 +16,7 @@ import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR } from "../shared/config";
 
 window.jQuery = $;
 window.Tether = Tether;
-require("bootstrap");
+//require("bootstrap");
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
 

@@ -27,7 +27,6 @@ const renderApp = (location, routerContext = {}) => {
         ${head.title}
         ${head.meta}
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="${STATIC_PATH}/css/bootstrap.min.css">
         <style class="${JSS_SSR_CLASS}">${sheets.toString()}</style>
       </head>
       <body>
