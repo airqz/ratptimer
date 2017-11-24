@@ -9,7 +9,9 @@
     "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "eslint src",
-    "prettier": "prettier-eslint --tab-width 4 --print-width 100 --write"
+    "prettier": "prettier-eslint --tab-width 4 --print-width 100 --write",
+    "precommit": "yarn test",
+    "prepush": "yarn test && yarn prod:build"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
