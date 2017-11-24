@@ -1,6 +1,5 @@
 // @prettier
 
-import $ from 'jquery'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { APP_NAME } from '../config'
@@ -10,28 +9,22 @@ import {
 } from '../routes'
 
 const handleNavLinkClick = () => {
-  $('body').scrollTop(0)
-  $('.js-navbar-collapse').collapse('hide')
+  console.log('link clicked'); // eslint-disable-line no-console
 }
 
 const Nav = () => (
-  <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-    <button className="navbar-toggler navbar-toggler-right" type="button" role="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-      <span className="navbar-toggler-icon" />
-    </button>
-    <Link to={HOME_PAGE_ROUTE} className="navbar-brand">{APP_NAME}</Link>
-    <div className="js-navbar-collapse collapse navbar-collapse">
-      <ul className="navbar-nav mr-auto">
-        {[
-          { route: HOME_PAGE_ROUTE, label: 'Home' },
-          { route: HELLO_PAGE_ROUTE, label: 'Say Hello' }
-        ].map(link => (
-          <li className="nav-item" key={link.route}>
-            <NavLink to={link.route} className="nav-link" activeStyle={{ color: 'white' }} exact onClick={handleNavLinkClick}>{link.label}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
+  <nav className="">
+    <Link href={HOME_PAGE_ROUTE} to={HOME_PAGE_ROUTE} className="navbar-brand">{APP_NAME}</Link>
+    <ul className="">
+      {[
+        { route: HOME_PAGE_ROUTE, label: 'Home' },
+        { route: HELLO_PAGE_ROUTE, label: 'Say Hello' }
+      ].map(link => (
+        <li className="nav-item" key={link.route}>
+          <NavLink to={link.route} className="nav-link" activeStyle={{ color: 'white' }} exact onClick={handleNavLinkClick}>{link.label}</NavLink>
+        </li>
+      ))}
+    </ul>
   </nav>
 )
 

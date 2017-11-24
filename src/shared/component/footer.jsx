@@ -1,14 +1,15 @@
 // @prettier
 
-import React from 'react'
-import { APP_NAME } from '../config'
+import React from "react";
+import { APP_NAME } from "../config";
 
-const Footer = () =>
+const Footer = () => (
   <div className="">
     <hr />
     <footer>
       <p>© {APP_NAME} 2017</p>
     </footer>
   </div>
+);
 
-export default Footer
+export default Footer;
