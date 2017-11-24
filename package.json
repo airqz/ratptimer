@@ -2,8 +2,10 @@
   "private": true,
   "name": "ratptimer",
   "scripts": {
-    "start": "babel-node src/server",
+    "start": "yarn dev:start",
+    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "eslint src"
   },
   "dependencies": {
