@@ -14,7 +14,7 @@ require('bootstrap')
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
 
-const wrapApp = (AppComponent, reduxStore) =>
+const wrapApp = (AppComponent) =>
   <AppContainer>
     <AppComponent />
   </AppContainer>
