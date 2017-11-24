@@ -1,3 +1,4 @@
+/*global window, document*/
 
 import 'babel-polyfill'
 
@@ -10,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Tether from 'tether'
 
 import App from '../shared/app'
-import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR, isProd } from '../shared/config'
+import { APP_CONTAINER_SELECTOR, JSS_SSR_SELECTOR } from '../shared/config'
 
 window.jQuery = $
 window.Tether = Tether
@@ -18,12 +19,13 @@ require('bootstrap')
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR)
 
-const wrapApp = (AppComponent) =>
+const wrapApp = (AppComponent) => (
   <BrowserRouter>
     <AppContainer>
       <AppComponent />
     </AppContainer>
   </BrowserRouter>
+)
 
 ReactDOM.render(wrapApp(App), rootEl)
 
@@ -33,3 +35,6 @@ if (module.hot) {
     ReactDOM.render(wrapApp(NextApp), rootEl)
   })
 }
+
+const jssServerSide = document.querySelector(JSS_SSR_SELECTOR)
+jssServerSide.parentNode.removeChild(jssServerSide)

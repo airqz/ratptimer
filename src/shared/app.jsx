@@ -1,4 +1,4 @@
-console.log("toto");
+// @prettier
 
 import React from 'react'
 import { Switch } from 'react-router'
@@ -16,8 +16,9 @@ import {
   HELLO_PAGE_ROUTE
 } from './routes'
 
-const App = () =>
+const App = () => (
   <div>
+    <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
     <Nav />
     <Switch>
       <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
@@ -25,5 +26,6 @@ const App = () =>
     </Switch>
     <Footer />
   </div>
+)
 
 export default App
