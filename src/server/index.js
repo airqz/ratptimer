@@ -1,8 +1,11 @@
 
 import compression from 'compression'
 import express from 'express'
+import { Server } from 'http'
+import favicon from 'serve-favicon'
 
 import routing from './routing'
+import { WEB_PORT, STATIC_PATH, isProd } from '../shared/config'
 
 
 const app = express()
