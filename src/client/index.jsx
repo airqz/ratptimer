@@ -1,3 +1,4 @@
+// @prettier
 /*global window, document*/
 
 import 'babel-polyfill'

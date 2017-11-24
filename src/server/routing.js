@@ -1,3 +1,4 @@
+// @prettier
 
 import {
   homePage,
@@ -13,10 +14,12 @@ import renderApp from './render-app'
 
 export default (app) => {
 
-  console.log(HOME_PAGE_ROUTE);
-
   app.get(HOME_PAGE_ROUTE, (req, res) => {
     res.send(renderApp(req.url, homePage()))
+  })
+
+    app.get(HELLO_PAGE_ROUTE, (req, res) => {
+    res.send(renderApp(req.url, helloPage()))
   })
 
   app.get('*', (req, res) => {

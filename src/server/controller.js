@@ -1,3 +1,4 @@
+// @prettier
 
 export const homePage = () => null
 

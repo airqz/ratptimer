@@ -1,3 +1,5 @@
+// @prettier
+
 import $ from 'jquery'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
@@ -12,7 +14,7 @@ const handleNavLinkClick = () => {
   $('.js-navbar-collapse').collapse('hide')
 }
 
-const Nav = () =>
+const Nav = () => (
   <nav className="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
     <button className="navbar-toggler navbar-toggler-right" type="button" role="button" data-toggle="collapse" data-target=".js-navbar-collapse">
       <span className="navbar-toggler-icon" />
@@ -31,5 +33,6 @@ const Nav = () =>
       </ul>
     </div>
   </nav>
+)
 
 export default Nav
