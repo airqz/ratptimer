@@ -31,7 +31,10 @@ export default {
     },
   },
   node: {
-    console: true
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
