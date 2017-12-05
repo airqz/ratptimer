@@ -30,6 +30,9 @@ export default {
       'Access-Control-Allow-Origin': '*',
     },
   },
+  node: {
+    console: true
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
