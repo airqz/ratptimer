@@ -7,6 +7,8 @@
     "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "dev:wds": "webpack-dev-server --progress",
     "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
+    "prod:stop": "pm2 delete server",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
     "test": "eslint src",
     "prettier": "prettier-eslint --tab-width 4 --print-width 100 --write",
@@ -50,6 +52,7 @@
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
     "nodemon": "^1.12.1",
+    "pm2": "^2.8.0",
     "prettier-eslint-cli": "^4.4.0",
     "rimraf": "^2.6.2",
     "webpack-dev-server": "^2.9.4"
