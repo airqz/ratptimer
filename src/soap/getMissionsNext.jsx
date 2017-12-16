@@ -22,3 +22,5 @@ const getMissionsNext = () => {
 </soapenv:Envelope>`
   )
 }
+
+export default getMissionsNext;
