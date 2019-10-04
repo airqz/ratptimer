@@ -36,7 +36,7 @@
     "react-router-dom": "^4.2.2",
     "request": "^2.83.0",
     "serve-favicon": "^2.4.5",
-    "soap": "^0.23.0",
+    "soap": "^0.29.0",
     "tether": "^1.4.2",
     "webpack": "^3.8.1",
     "xml2js": "^0.4.19"

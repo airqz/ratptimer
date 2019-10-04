@@ -73,7 +73,7 @@ let callback = (error, response, body) => {
   //console.log(response.statusCode);
 
   if (!error && response.statusCode == 200) {
-    console.log('Raw result', body);
+    //console.log('Raw result', body);
 
     /*
     var parser = new xml2js.Parser({
